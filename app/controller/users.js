@@ -1,3 +1,4 @@
+var User = require('../model/User');
 var users = {
  
   getAll: function(req, res) {
@@ -12,9 +13,16 @@ var users = {
   },
  
   create: function(req, res) {
-    var newuser = req.body;
-    data.push(newuser); // Spoof a DB call
-    res.json(newuser);
+	  var userModel = new User();
+		userModel.email = req.body.email;
+		userModel.password = req.body.password;
+		userModel.save(function(err, user) {
+			if (err) {
+				res.status(401).send(err);
+			} else {
+				res.status(201).send(user);
+			}
+		})
   },
  
   update: function(req, res) {
@@ -30,16 +38,4 @@ var users = {
     res.json(true);
   }
 };
- 
-var data = [{
-  name: 'user 1',
-  id: '1'
-}, {
-  name: 'user 2',
-  id: '2'
-}, {
-  name: 'user 3',
-  id: '3'
-}];
- 
 module.exports = users;
