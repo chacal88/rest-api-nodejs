@@ -1,8 +1,10 @@
 var mails = {
 		schedule: function ( req, res ){
-			var email = req.body.email || '';
-			if (email == '') {
-				res.status(403).send({'message':"Erro Email Invalido","req":req.body});
+			var to = req.body.to || '';
+			var name = req.body.name || '';
+			var subject = req.body.subject || '';
+			if (to == '' || name == '' || subject == '') {
+				res.status(403).send({'message':"Erro Parametro Invalido","req":req.body});
 				return
 			}
 			

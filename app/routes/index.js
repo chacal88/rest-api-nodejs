@@ -10,6 +10,7 @@ module.exports = function routes( router , app) {
 	 */
 	//router.post( '/' + appConst.DOMAIN + '/' + appConst.VERSION + '/public/login', auth.login);
 	router.post( '/' + appConst.DOMAIN + '/' + appConst.VERSION + '/public/mails' , mails.schedule );
+	
 
 //	 
 //	/*
