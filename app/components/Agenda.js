@@ -7,6 +7,6 @@ module.exports = function() {
 		}
 	});
 	this.schedule = function(req) {
-		return this.agenda.schedule('in 1 seconds', 'send email report', req.body);
+		return this.agenda.now('send email report', req.body);
 	};
 };

@@ -1,0 +1,12 @@
+{
+    "name": "Queue Storm",
+    "description": "Queue Jobs Stormtech",
+    "version": "0.0.1",
+    "dependencies": {
+        "agenda" : "^0.6.28",
+        "nodemailer" : "1.3.4"
+    },
+    "engines": {
+        "node": ">=0.10.0"
+    }
+}
